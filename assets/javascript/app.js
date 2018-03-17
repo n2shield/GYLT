@@ -17,15 +17,12 @@ $(document).ready(function() {
     var database = firebase.database();
 });
 
+//Google API key: AIzaSyACdS2nqBDGsYpiAlVFTQR-TNKNGuKgosc
 
 
 
-//When user clicks on search button on Homes side, search query will pull up housing locations based on desired search options(radius, miles, etc)
 
-//When user clicks on search button for Jobs side, search query will pull up available jobs within location based on search options(radius, miles, etc)
+//Bar Hopping App
 
-//Screen will be initially split into 2 parts; the left side will be the search for Home(housing, apartment, etc)
-
-//Right side will have search for Jobs
-
-//Below both sides, a chart will pop up with statistics
+/*If user is going to a bar/grille, they can search for locations either close to them or in the search options, give a radius/miles/location description and hit
+the search button.  Search results should display the desired bar/grille locations and along with it should display estimates for time and price
