@@ -1,0 +1,96 @@
+#fullView{
+	margin:150px;
+}
+
+#searchSection{
+	margin:100px;
+}
+body{
+	background-color:#0a0007;
+	text-align:center;
+	font-family:"Amita";
+}
+
+#hopperBadge{
+	animation-name:swing;
+	transform:scale(1.5);
+	animation-duration:3s;
+}
+#barBadge{
+	animation-name:swing;
+	transform:scale(1.5);
+	animation-duration:3s;
+}
+
+.left{
+	transform:scale(3);
+	animation-name:slideInLeft;
+	animation-duration:3s;
+}
+
+.right{
+	transform:scale(3);
+	animation-name:slideInRight;
+	animation-duration:3s;
+}
+img{
+ border-radius: 50%;
+}
+
+@keyframes swing {
+  20% {
+    transform: rotate3d(0, 0, 1, 15deg);
+  }
+
+  40% {
+    transform: rotate3d(0, 0, 1, -10deg);
+  }
+
+  60% {
+    transform: rotate3d(0, 0, 1, 5deg);
+  }
+
+  80% {
+    transform: rotate3d(0, 0, 1, -5deg);
+  }
+
+  to {
+    transform: rotate3d(0, 0, 1, 0deg);
+  }
+}
+
+.swing {
+  transform-origin: top center;
+  animation-name: swing;
+}
+
+
+@keyframes slideInLeft {
+  from {
+    transform: translate3d(-750%, 0, 0);
+    visibility: visible;
+  }
+
+  to {
+    transform: translate3d(5, 0, 0);
+  }
+}
+
+.slideInLeft {
+  animation-name: slideInLeft;
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translate3d(750%, 0, 0);
+    visibility: visible;
+  }
+
+  to {
+    transform: translate3d(5, 0, 0);
+  }
+}
+
+.slideInRight {
+  animation-name: slideInRight;
+}

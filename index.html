@@ -1,9 +1,98 @@
 <!DOCTYPE html>
-<html>
-    <head>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css" integrity="sha384-v2Tw72dyUXeU3y4aM2Y0tBJQkGfplr39mxZqlTBDUZAb9BGoC40+rdFCG0m10lXk" crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/fontawesome.css" integrity="sha384-q3jl8XQu1OpdLgGFvNRnPdj5VIlCvgsDQTQB6owSOHWlAurxul7f+JpUOVdAiJ5P" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css?family=Amita" rel="stylesheet">
 
-    </head>
-    <body>
-        
-    </body>
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+</head>
+<body background="assets/images/45-degree-fabric-light.png">
+
+<div container id="fullView">
+	<div container id="viewOne">
+	<div class="jumbotron">
+	<p class="lead">
+    <h1><span class="badge badge-secondary" id ="barBadge">Bar</span></h1>
+    <h1><span class="badge badge-secondary" id = "hopperBadge">Hopper</span></h1>
+  </p>
+  <br>
+  <i class="fas fa-glass-martini left"></i>
+  <i class="fas fa-glass-martini right"></i>
+  <h1 class="display-4">From Happy Hour to Saturday Social</h1>
+  <p class="lead">We've got you <em>safely</em> covered, let us help you find a bar and a ride!!</p>
+  <hr class="my-4">
+  
+  <img id="friends" src="assets/images/barFriends.jpg">
+
+<input class="btn btn-secondary btn-lg btn-block" type="submit" value="Click Here for a Good Time">
+</div>
+</div>
+<!---Above this is the user's first view-->
+
+
+<input class="form-control" type="text" placeholder="Where are we heading?" readonly>
+
+<div class="input-group">
+  <div class="input-group-prepend">
+    <div class="input-group-text">
+    <input type="radio" aria-label="Radio button for following text input"> A Bar
+    </div>
+  </div>
+</div>
+
+<div class="input-group">
+  <div class="input-group-prepend">
+    <div class="input-group-text">
+    <input type="radio" aria-label="Radio button for following text input">A Restaurant
+  </div>
+</div>
+
+  <div class="input-group">
+  <div class="input-group-prepend">
+    <div class="input-group-text">
+    <input type="radio" aria-label="Radio button for following text input">I should probably head home...
+    </div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+<div container id="searchSection">
+<div class="jumbotron">
+  <h1 class="display-4">You've Got Options</h1>
+  <p class="lead">Sometimes it's the smallest decisions that can change your life forever -Keri Russell</p>
+  <hr class="my-4">
+  <p>Below you will find options for where you'd like to go and how you'd like to  get there: </p>
+   <div class="row">
+    <div class="col" id="barList">
+      Where I Wanna Go:
+      <ul>Bar1</ul>
+      <ul>Bar2</ul>
+      <ul>Bar3</ul>
+      <ul>Bar4</ul>
+      <ul>Bar5</ul>
+      <ul>Bar6</ul>
+
+    </div>
+    <div class="col" id="googleMap">
+      My Map
+    </div>
+    <div class="col">
+      How I Wanna Go:
+      <div id="lyftButton">
+    </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!--Above this is the user's other view for search result-->
+
+</body>
 </html>
