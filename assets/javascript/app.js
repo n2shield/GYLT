@@ -26,4 +26,6 @@ $(document).ready(function() {
 
 /*If user is going to a bar/grille, they can search for locations either close to them or in the search options, give a radius/miles/location description and hit
 the search button.  Search results should display the desired bar/grille locations and along with it should display estimates for time and price
+<<<<<<< HEAD
 © 2018 GitHub, Inc.
+ 32c996f02f4890182aa4a3935fdffc5c260e0cbf
