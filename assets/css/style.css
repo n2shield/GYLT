@@ -2,9 +2,8 @@
 	margin:150px;
 }
 
-#searchSection{
-	margin:100px;
-}
+	
+
 body{
 	background-color:#0a0007;
 	text-align:center;
@@ -36,6 +35,12 @@ body{
 img{
  border-radius: 50%;
 }
+
+#map{
+	height:400px;
+	width:200px;
+}
+
 
 @keyframes swing {
   20% {
@@ -94,3 +99,4 @@ img{
 .slideInRight {
   animation-name: slideInRight;
 }
+
