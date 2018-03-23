@@ -1,5 +1,12 @@
 #fullView{
 	margin:150px;
+	max-height:860px;
+	overflow:hidden;
+}
+
+#fullView.open{
+	margin:150px;
+	max-height:2200px;
 }
 
 	
