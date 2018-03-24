@@ -88,11 +88,42 @@ function initMap() {
 }
 
 //initMap runs after the DOM content is loaded
-document.addEventListener("DOMContentLoaded", initMap);
+//document.addEventListener("DOMContentLoaded", initMap);
 
-initMap();
 //Google API key: AIzaSyACdS2nqBDGsYpiAlVFTQR-TNKNGuKgosc
+initMap();
+//this is the lyft button info
+var OPTIONS = {
+    scriptSrc: 'assets/javascript/lyftWebButton.min.js',
+    namespace: '',
+    clientId: 'JKrQDs6Aj6nW',
+    clientToken: 'Nsc3BgxD6rn0s609/ys38bQEC9Jkth22EGr+zBuhJc9e52Bp8fhpe0x50CKCHKHramijmxeYv5TSwPLyNZiZxchVrGMVIp+DklCWuX7dktWknyMiQOixLPs=',
+    location: {
+      pickup: {}, 
+      destination: {
+        latitude: '37.776503000',
+        longitude: '-122.392038500',
+      },
+    },
+    parentElement:$("#lyft-web-button-parent"),
+    queryParams: {
+      credits: ''
+    },
+    theme: 'multicolor large',
+  };
+  (function(t) {
+    var n = this.window,
+    e = this.document;
+    n.lyftInstanceIndex = n.lyftInstanceIndex || 0;
+    var a = t.parentElement,
+    c = e.createElement("script");
+    c.async = !0, c.onload = function() {
+    n.lyftInstanceIndex++;
+    var e = t.namespace ? "lyftWebButton" + t.namespace + n.lyftInstanceIndex : "lyftWebButton" + n.lyftInstanceIndex;
+    n[e] = n.lyftWebButton, t.objectName = e, n[e].initialize(t)
+  }, c.src = t.scriptSrc, a.insertBefore(c, a.childNodes[0])
+  }).call(this, OPTIONS);
 
-//showing and hiding the 2 sections of the page
+
 }});
     });
