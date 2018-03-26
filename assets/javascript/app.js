@@ -1,4 +1,20 @@
 // Google maps API, get location auto, and populate nearby bars
+
+//firebase connection
+  var config = {
+    apiKey: "AIzaSyBoggBJpxc3S3k3G-2e93HGdJ4e9kWOhIQ",
+    authDomain: "bar-hopper-e4645.firebaseapp.com",
+    databaseURL: "https://bar-hopper-e4645.firebaseio.com",
+    projectId: "bar-hopper-e4645",
+    storageBucket: "",
+    messagingSenderId: "45105829466"
+  };
+  firebase.initializeApp(config);
+  var database = firebase.database();
+
+
+
+//changing view buttons 
 $(document).ready(function () {
     $("#searchButton").click(function () {        
         if(fullView.className == "open"){
@@ -69,6 +85,39 @@ function initMap() {
             '<br>' + place.vicinity + '<div id="lyft-web-button-parent"></div>' + '</div>' );
           infoWindow.open(map, this);
           console.log(place);
+          console.log(place.name);
+          console.log(place.rating);
+          console.log(place.vicinity);
+
+          var name = place.name
+          var rating= place.rating
+          var vicinity= place.vicinity
+
+        database.ref().push({
+        name: place.name,
+        rating: place.rating,
+        vicinity: place.vicinity,
+        dateAdded: firebase.database.ServerValue.TIMESTAMP
+      });
+
+    database.ref().orderByChild("dateAdded").limitToLast(1).on("child_added", function(snapshot) {
+      // storing the snapshot.val() in a variable for convenience
+      var sv = snapshot.val();
+      // Console.loging the last user's data
+      console.log(sv.name);
+      console.log(sv.rating);
+      console.log(sv.vicinity);
+      // Change the HTML to reflect
+      $("#iw-phone").text(sv.name);
+      $("#iw-rating").text(sv.rating);
+      $("#iw-address").text(sv.vicinity);
+      // Handle the errors
+    }, function(errorObject) {
+      console.log("Errors handled: " + errorObject.code);
+    });
+
+
+
         });
       }
     }, function () {
@@ -91,39 +140,8 @@ function initMap() {
 //document.addEventListener("DOMContentLoaded", initMap);
 
 //Google API key: AIzaSyACdS2nqBDGsYpiAlVFTQR-TNKNGuKgosc
+//this is the lyft button info,has been moved temporarily to HTML file
 initMap();
-//this is the lyft button info
-var OPTIONS = {
-    scriptSrc: 'assets/javascript/lyftWebButton.min.js',
-    namespace: '',
-    clientId: 'JKrQDs6Aj6nW',
-    clientToken: 'Nsc3BgxD6rn0s609/ys38bQEC9Jkth22EGr+zBuhJc9e52Bp8fhpe0x50CKCHKHramijmxeYv5TSwPLyNZiZxchVrGMVIp+DklCWuX7dktWknyMiQOixLPs=',
-    location: {
-      pickup: {}, 
-      destination: {
-        latitude: '37.776503000',
-        longitude: '-122.392038500',
-      },
-    },
-    parentElement:$("#lyft-web-button-parent"),
-    queryParams: {
-      credits: ''
-    },
-    theme: 'multicolor large',
-  };
-  (function(t) {
-    var n = this.window,
-    e = this.document;
-    n.lyftInstanceIndex = n.lyftInstanceIndex || 0;
-    var a = t.parentElement,
-    c = e.createElement("script");
-    c.async = !0, c.onload = function() {
-    n.lyftInstanceIndex++;
-    var e = t.namespace ? "lyftWebButton" + t.namespace + n.lyftInstanceIndex : "lyftWebButton" + n.lyftInstanceIndex;
-    n[e] = n.lyftWebButton, t.objectName = e, n[e].initialize(t)
-  }, c.src = t.scriptSrc, a.insertBefore(c, a.childNodes[0])
-  }).call(this, OPTIONS);
-
 
 }});
     });

@@ -39,7 +39,7 @@ body{
 	animation-name:slideInRight;
 	animation-duration:3s;
 }
-img{
+#friends{
  border-radius: 50%;
 }
 
