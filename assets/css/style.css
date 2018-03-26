@@ -46,8 +46,10 @@ body{
 #map{
 	height:400px;
 	width:200px;
+	border-style:solid;
 }
 
+/*CSS Animation for jumbotrons*/
 
 @keyframes swing {
   20% {
