@@ -1,48 +1,59 @@
 #fullView{
-	margin:150px;
-	max-height:860px;
-	overflow:hidden;
+  margin:150px;
+  max-height:860px;
+  overflow:hidden;
 }
 
 #fullView.open{
-	margin:150px;
-	max-height:2200px;
+  margin:150px;
+  max-height:2200px;
 }
 
-	
+  
 
 body{
-	background-color:#0a0007;
-	text-align:center;
-	font-family:"Amita";
+  background-color:#0a0007;
+  text-align:center;
+  font-family:"Amita";
 }
 
 #hopperBadge{
-	animation-name:swing;
-	transform:scale(1.5);
-	animation-duration:3s;
+  animation-name:swing;
+  transform:scale(1.5);
+  animation-duration:3s;
 }
 #barBadge{
-	animation-name:swing;
-	transform:scale(1.5);
-	animation-duration:3s;
+  animation-name:swing;
+  transform:scale(1.5);
+  animation-duration:3s;
 }
 
 .left{
-	transform:scale(3);
-	animation-name:slideInLeft;
-	animation-duration:3s;
+  transform:scale(3);
+  animation-name:slideInLeft;
+  animation-duration:3s;
 }
 
 .right{
-	transform:scale(3);
-	animation-name:slideInRight;
-	animation-duration:3s;
+  transform:scale(3);
+  animation-name:slideInRight;
+  animation-duration:3s;
 }
 
+
 #map{
-	height:400px;
-	width:400px;
+  height:400px;
+  width:200px;
+}
+
+#lyft-web-button-parent{
+  width: 200px;
+  height: 15px;
+  margin: auto;
+}
+
+.btn-secondary{
+  margin-top: 30px;
 }
 
 
@@ -90,7 +101,7 @@ body{
 }
 
 @keyframes slideInRight {
-  from {
+  from {30
     transform: translate3d(750%, 0, 0);
     visibility: visible;
   }
@@ -102,5 +113,33 @@ body{
 
 .slideInRight {
   animation-name: slideInRight;
+}
+
+@media only screen and (max-width: 600px){
+
+  #View1{
+    width: 100%;
+   }
+ 
+  .display-4,
+  .lead{
+    font-size: 20px;
+    margin: auto;
+  }
+
+  #friends{
+    width: 100%;
+  }
+
+  #bar,
+  #hopper{
+    font-size: 20px;
+  }
+
+  .btn-secondary{
+    width: 100px !important;
+  }
+
+
 }
 
