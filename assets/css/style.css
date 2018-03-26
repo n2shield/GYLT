@@ -39,13 +39,10 @@ body{
 	animation-name:slideInRight;
 	animation-duration:3s;
 }
-img{
- border-radius: 50%;
-}
 
 #map{
 	height:400px;
-	width:200px;
+	width:400px;
 }
 
 
