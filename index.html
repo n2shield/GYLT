@@ -1,102 +1,243 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-	<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
-    <meta charset="utf-8">
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+<meta charset="utf-8">
+
 	<title>Document</title>
-	<script   	src="https://code.jquery.com/jquery-3.3.1.min.js"
+
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"
   				integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
   				crossorigin="anonymous"> </script>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css" integrity="sha384-v2Tw72dyUXeU3y4aM2Y0tBJQkGfplr39mxZqlTBDUZAb9BGoC40+rdFCG0m10lXk" crossorigin="anonymous">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/fontawesome.css" integrity="sha384-q3jl8XQu1OpdLgGFvNRnPdj5VIlCvgsDQTQB6owSOHWlAurxul7f+JpUOVdAiJ5P" crossorigin="anonymous">
-<link href="https://fonts.googleapis.com/css?family=Amita" rel="stylesheet">
-
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyACSmgvFTDztqJciZMHvIhrE7Cgfi7yfms&libraries=places"></script>
-
-
-
-   <script src="assets/javascript/app.js"></script>
-
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/fontawesome.css" integrity="sha384-q3jl8XQu1OpdLgGFvNRnPdj5VIlCvgsDQTQB6owSOHWlAurxul7f+JpUOVdAiJ5P" crossorigin="anonymous">
+	<script src="assets/javascript/lyftWebButton.min.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Amita" rel="stylesheet">
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyACSmgvFTDztqJciZMHvIhrE7Cgfi7yfms&libraries=places"></script>
+  <script src="assets/javascript/app.js"></script>
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
 </head>
+
 <body background="assets/images/45-degree-fabric-light.png">
+
 <div id="fullView">
 
+
+
 	<div class="jumbotron" id="View1">
+
 	<p class="lead">
+
     <h1><span class="badge badge-secondary" id ="barBadge">Bar</span></h1>
+
     <h1><span class="badge badge-secondary" id = "hopperBadge">Hopper</span></h1>
+
   </p>
+
   <br>
+
   <i class="fas fa-glass-martini left"></i>
   <i class="fas fa-glass-martini right"></i>
+
   <h1 class="display-4">From Happy Hour to Saturday Social</h1>
+
   <p class="lead">We've got you <em>safely</em> covered, let us help you find a bar and a ride!!</p>
+
   <hr class="my-4">
-  
   <img id="friends" src="assets/images/barFriends.jpg">
 
+
+<br><br>
 <input class="btn btn-secondary btn-lg btn-block" type="submit" id="searchButton" value="Click Here for a Good Time">
+<br><br>
 </div>
+
 <!---Above this is the user's first view-->
 
 
+
+
+
 <div class="jumbotron">
+
   <h1 class="display-4">You've Got Options</h1>
+
   <p class="lead">Sometimes it's the smallest decisions that can change your life forever -Keri Russell</p>
+
   <hr class="my-4">
+
   <p>What's Life Without Options? </p>
 
+
+
    <div class="row">
+
    		
+
     <div class="col" id="map"></div>
+
     <div id="listing">
+
         <table id="resultsTable">
+
         <tbody id="results"></tbody>
+
         </table>
+
     </div>
+
+
 
     <div class="col" id="infoContent">
+
       Where I Wanna Go:
+
        <table>
+
                 <tr id="iw-url-row" class="iw_table_row">
+
                   <td id="iw-icon" class="iw_table_icon"></td>
+
                   <td id="iw-url"></td>
+
                 </tr>
+
                 <tr id="iw-address-row" class="iw_table_row">
+
                   <td class="iw_attribute_name">Address:</td>
+
                   <td id="iw-address"></td>
+
                 </tr>
+
                 <tr id="iw-phone-row" class="iw_table_row">
+
                   <td class="iw_attribute_name">Telephone:</td>
+
                   <td id="iw-phone"></td>
+
                 </tr>
+
                 <tr id="iw-rating-row" class="iw_table_row">
+
                   <td class="iw_attribute_name">Rating:</td>
+
                   <td id="iw-rating"></td>
+
                 </tr>
+
                 <tr id="iw-website-row" class="iw_table_row">
+
                   <td class="iw_attribute_name">Website:</td>
+
                   <td id="iw-website"></td>
+
                 </tr>
+
             </table>
 
+
+
     </div>
 
+
+
 </div>
+
     <div>
+
       Click Here For a Ride!
-      <div id="lyftButton">
+
+      <div id="lyft-web-button-parent">
+
     </div>
+<br>
+
+
+    <script type="text/javascript">
+
+   var OPTIONS = {
+
+    scriptSrc: 'assets/javascript/lyftWebButton.min.js',
+
+    namespace: '',
+
+    clientId: 'JKrQDs6Aj6nW',
+
+    clientToken: 'Nsc3BgxD6rn0s609/ys38bQEC9Jkth22EGr+zBuhJc9e52Bp8fhpe0x50CKCHKHramijmxeYv5TSwPLyNZiZxchVrGMVIp+DklCWuX7dktWknyMiQOixLPs=',
+
+    location: {
+
+      pickup: {}, 
+
+      destination: {
+
+        latitude: '37.776503000',
+
+        longitude: '-122.392038500',
+
+      },
+
+    },
+
+    parentElement: document.getElementById('lyft-web-button-parent'),
+
+    queryParams: {
+
+      credits: ''
+
+    },
+
+    theme: 'multicolor large',
+
+  };
+
+  (function(t) {
+
+    var n = this.window,
+
+    e = this.document;
+
+    n.lyftInstanceIndex = n.lyftInstanceIndex || 0;
+
+    var a = t.parentElement,
+
+    c = e.createElement("script");
+
+    c.async = !0, c.onload = function() {
+
+    n.lyftInstanceIndex++;
+
+    var e = t.namespace ? "lyftWebButton" + t.namespace + n.lyftInstanceIndex : "lyftWebButton" + n.lyftInstanceIndex;
+
+    n[e] = n.lyftWebButton, t.objectName = e, n[e].initialize(t)
+
+  }, c.src = t.scriptSrc, a.insertBefore(c, a.childNodes[0])
+
+  }).call(this, OPTIONS);
+
+</script>
+
 </div>
+
 </div>
+
 </div>
+
 </div>
+
+
+
+
 
 
 
 <!--Above this is the user's other view for search result-->
 
-</body>
 
+
+</body>
